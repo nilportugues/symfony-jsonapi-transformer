@@ -79,7 +79,7 @@ trait JsonApiResponseTrait
     {
         $error = new Error('Unprocessable Entity', json_decode($json));
 
-        return $this->createResponse(new UnprocessableEntity([$error]));
+        return $this->createResponse(new UnprocessableEntity(new ErrorBag([$error])));
     }
 
     /**
@@ -91,7 +91,7 @@ trait JsonApiResponseTrait
     {
         $error = new Error('Unprocessable Entity', json_decode($json));
 
-        return $this->createResponse(new UnprocessableEntity([$error]));
+        return $this->createResponse(new UnprocessableEntity(new ErrorBag([$error])));
     }
 
     /**
@@ -133,7 +133,7 @@ trait JsonApiResponseTrait
     {
         $error = new Error('Unsupported Action', json_decode($json));
 
-        return $this->createResponse(new UnsupportedAction([$error]));
+        return $this->createResponse(new UnsupportedAction(new ErrorBag([$error])));
     }
 
     /**
