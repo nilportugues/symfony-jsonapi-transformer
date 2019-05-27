@@ -135,7 +135,7 @@ trait JsonApiResponseTrait
     {
         $error = new Error('Unsupported Action', json_decode($json));
 
-        return $this->createResponse(new UnsupportedAction([$error]));
+        return $this->createResponse(new UnsupportedAction(new ErrorBag([$error])));
     }
 
     /**
